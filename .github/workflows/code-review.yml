@@ -14,26 +14,30 @@ jobs:
   # Perform linting on code
   linting:
 
-    name: Linting
+    #name: Linting
     uses: shar1084/stockplot/.github/workflows/lint.yml@main
 
   buildtest:
   
-    name: Build and Unit Tests
+    #name: Build and Unit Tests
     needs:
        - linting
     uses: shar1084/stockplot/.github/workflows/build.yml@main
 
   githubas:
 
-    name: Github Advanced Security
+    #name: Github Advanced Security
     needs:
        - buildtest
     uses: shar1084/stockplot/.github/workflows/github-as.yml@main
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
   externalsast:
 
-    name: External SAST
+    #name: External SAST
     needs:
        - githubas
     uses: shar1084/stockplot/.github/workflows/external-sast.yml@main
