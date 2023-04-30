@@ -2,12 +2,17 @@
 #
 #
 
-name: Code Review
+name: Pull Request Review
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
     branches: [ "main" ]
 
 jobs:
@@ -29,7 +34,7 @@ jobs:
     name: Github Advanced Security
     needs:
        - buildtest
-    uses: shar1084/stockplot/.github/workflows/github-as.yml@main
+    uses: shar1084/stockplot/.github/workflows/codeql.yml@main
     permissions:
       actions: read
       contents: read

@@ -2,7 +2,7 @@
 #
 #
 
-name: esternalsast
+name: ExternalSAST
 
 on:
   workflow_dispatch:
