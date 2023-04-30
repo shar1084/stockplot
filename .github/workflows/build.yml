@@ -33,6 +33,8 @@ jobs:
 
     runs-on: ubuntu-latest
     name: Unit Tests
+    needs:
+       - build
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
