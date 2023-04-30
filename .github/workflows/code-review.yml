@@ -28,7 +28,7 @@ jobs:
 
     name: Github Advanced Security
     needs:
-       - linting
+       - buildtest
     uses: shar1084/stockplot/.github/workflows/github-as.yml@main
 
   externalsast:
