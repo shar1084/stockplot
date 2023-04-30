@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: stockplot/.github/workflows/lint.yml@main
+    - uses: shar1084/stockplot/.github/workflows/lint.yml@main
 
   buildtest:
   
@@ -27,7 +27,7 @@ jobs:
     needs:
        - linting
     steps:
-    - uses: stockplot/.github/workflows/build.yml@main
+    - uses: shar1084/stockplot/.github/workflows/build.yml@main
 
   githubas:
   
@@ -36,7 +36,7 @@ jobs:
     needs:
        - linting
     steps:
-    - uses: stockplot/.github/workflows/github-as.yml@main
+    - uses: shar1084/stockplot/.github/workflows/github-as.yml@main
 
   externalsast:
   
@@ -45,5 +45,5 @@ jobs:
     needs:
        - githubas
     steps:
-    - uses: stockplot/.github/workflows/external-sast.yml@main
+    - uses: shar1084/stockplot/.github/workflows/external-sast.yml@main
     
