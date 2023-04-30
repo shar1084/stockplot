@@ -21,3 +21,9 @@ jobs:
     #- name: Analysing the code with pylint
       #run: |
       # pylint $(git ls-files '*.py')
+    - name: Install 2
+      run: |
+        python -m pip install --upgrade pip
+    - name: Install 3
+      run: |
+        python -m pip install --upgrade pip
